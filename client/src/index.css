@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 24 88% 63%; /* #fa9446 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 24 88% 63%; /* #fa9446 */
+  --radius: 0.5rem;
+  
+  /* SureDyn custom colors */
+  --suredyn-orange: 24 88% 63%; /* #fa9446 */
+  --suredyn-orange-light: 24 88% 73%; /* #fdb373 */
+  --suredyn-orange-pale: 24 88% 90%; /* #fee4d1 */
+  --suredyn-orange-dark: 24 88% 53%; /* #e8843d */
+}
+
+.dark {
+  --background: 222 84% 4.9%; /* #0a0e1a */
+  --foreground: 210 40% 98%; /* #fafbfc */
+  --muted: 217 32.6% 17.5%; /* #1e2a47 */
+  --muted-foreground: 215 20.2% 65.1%; /* #8b9bc4 */
+  --popover: 222 84% 4.9%; /* #0a0e1a */
+  --popover-foreground: 210 40% 98%; /* #fafbfc */
+  --card: 222 84% 4.9%; /* #0a0e1a */
+  --card-foreground: 210 40% 98%; /* #fafbfc */
+  --border: 217 32.6% 17.5%; /* #1e2a47 */
+  --input: 217 32.6% 17.5%; /* #1e2a47 */
+  --primary: 24 88% 63%; /* #fa9446 - Keep SureDyn orange consistent */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 217 32.6% 17.5%; /* #1e2a47 */
+  --secondary-foreground: 210 40% 98%; /* #fafbfc */
+  --accent: 217 32.6% 17.5%; /* #1e2a47 */
+  --accent-foreground: 210 40% 98%; /* #fafbfc */
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 24 88% 63%; /* #fa9446 - Keep SureDyn orange consistent */
+  --radius: 0.5rem;
+  
+  /* Dark mode SureDyn colors */
+  --suredyn-orange: 24 88% 63%; /* #fa9446 - Consistent branding */
+  --suredyn-orange-light: 24 88% 73%; /* #fdb373 */
+  --suredyn-orange-pale: 24 88% 20%; /* #2d1a0d - Dark version */
+  --suredyn-orange-dark: 24 88% 53%; /* #e8843d */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, padding-top 0.3s ease;
+  }
+
+  /* Account for sticky header spacing */
+  body.header-sticky {
+    padding-top: 120px; /* Adjust based on header height with contact bar */
+  }
+
+  /* Smooth transitions for all theme-related properties */
+  *, *::before, *::after {
+    transition: background-color 0.3s ease-in-out, 
+                border-color 0.3s ease-in-out, 
+                color 0.3s ease-in-out, 
+                fill 0.3s ease-in-out, 
+                stroke 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+  }
+
+  /* Preserve specific transitions that shouldn't be overridden */
+  .no-theme-transition, 
+  .no-theme-transition *, 
+  .no-theme-transition *::before, 
+  .no-theme-transition *::after {
+    transition: none;
+  }
+
+  /* Enhanced focus styles for dark mode */
+  .dark *:focus {
+    outline-color: hsl(var(--suredyn-orange));
+  }
+
+  /* Better scrollbar for dark mode */
+  .dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 4px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .suredyn-orange {
+    color: hsl(var(--suredyn-orange));
+  }
+  
+  .bg-suredyn-orange {
+    background-color: hsl(var(--suredyn-orange));
+  }
+  
+  .border-suredyn-orange {
+    border-color: hsl(var(--suredyn-orange));
+  }
+  
+  .hover\:bg-suredyn-orange-dark:hover {
+    background-color: hsl(var(--suredyn-orange-dark));
+  }
+  
+  .hover\:text-suredyn-orange:hover {
+    color: hsl(var(--suredyn-orange));
+  }
+  
+  .bg-suredyn-orange-light {
+    background-color: hsl(var(--suredyn-orange-light));
+  }
+  
+  .bg-suredyn-orange-pale {
+    background-color: hsl(var(--suredyn-orange-pale));
+  }
+  
+  .text-suredyn-orange-dark {
+    color: hsl(var(--suredyn-orange-dark));
+  }
+  
+  .hover\:bg-suredyn-orange-pale:hover {
+    background-color: hsl(var(--suredyn-orange-pale));
+  }
+  
+  .hover\:text-suredyn-orange-dark:hover {
+    color: hsl(var(--suredyn-orange-dark));
+  }
+}
+
+/* Critical CSS for above-the-fold content */
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--suredyn-orange-pale)) 100%);
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-up-delay {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Ensure minimum touch target sizes */
+@layer utilities {
+  .min-touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .min-touch-target-lg {
+    min-height: 60px;
+    min-width: 120px;
+  }
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid hsl(var(--suredyn-orange));
+    outline-offset: 2px;
+  }
+}
