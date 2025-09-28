@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Key pages for crawling
+Allow: /services/*
+Allow: /solutions/*
+Allow: /industries/*
+Allow: /blog/*
+Allow: /case-studies/*
+
+# Block development files
+Disallow: /src/
+Disallow: /_vite/
+Disallow: /@vite/
+Disallow: /@fs/
+
+# Sitemap location
+Sitemap: https://suredyn.com/sitemap.xml
