@@ -1,0 +1,281 @@
+/* SureDyn Business Solutions - Component Styles */
+
+/* CSS Custom Properties for Brand Colors */
+:root {
+  --suredyn-orange: #fa9446;
+  --suredyn-orange-dark: #e8732c;
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --muted: #6b7280;
+  --muted-foreground: #9ca3af;
+  --border: #e5e7eb;
+  --input: #f9fafb;
+  --ring: #fa9446;
+  --radius: 0.5rem;
+}
+
+/* Utility classes for SureDyn branding */
+.text-suredyn-orange {
+  color: var(--suredyn-orange);
+}
+
+.text-suredyn-orange-dark {
+  color: var(--suredyn-orange-dark);
+}
+
+.bg-suredyn-orange {
+  background-color: var(--suredyn-orange);
+}
+
+.bg-suredyn-orange-dark {
+  background-color: var(--suredyn-orange-dark);
+}
+
+.border-suredyn-orange {
+  border-color: var(--suredyn-orange);
+}
+
+.hover\:text-suredyn-orange:hover {
+  color: var(--suredyn-orange);
+}
+
+.hover\:text-suredyn-orange-dark:hover {
+  color: var(--suredyn-orange-dark);
+}
+
+.hover\:bg-suredyn-orange:hover {
+  background-color: var(--suredyn-orange);
+}
+
+.hover\:bg-suredyn-orange-dark:hover {
+  background-color: var(--suredyn-orange-dark);
+}
+
+.hover\:border-suredyn-orange:hover {
+  border-color: var(--suredyn-orange);
+}
+
+.focus\:ring-suredyn-orange:focus {
+  --tw-ring-color: var(--suredyn-orange);
+}
+
+.focus\:border-suredyn-orange:focus {
+  border-color: var(--suredyn-orange);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll animation classes */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Component-specific styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--suredyn-orange);
+  color: white;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--suredyn-orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--suredyn-orange);
+  border: 2px solid var(--suredyn-orange);
+  padding: 0.625rem 1.375rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--suredyn-orange);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  padding: 0.625rem 1.375rem;
+}
+
+.btn-outline:hover {
+  background-color: var(--input);
+}
+
+.btn-white {
+  background-color: white;
+  color: var(--suredyn-orange);
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-white:hover {
+  background-color: #f9fafb;
+}
+
+/* Form styles */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: var(--input);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--suredyn-orange);
+  box-shadow: 0 0 0 2px rgba(250, 148, 70, 0.2);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%236b7280' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.75rem;
+  padding-right: 2.5rem;
+}
+
+/* Responsive typography */
+.text-responsive-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.text-responsive-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive-2xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-2xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--suredyn-orange);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --muted: #64748b;
+    --muted-foreground: #94a3b8;
+    --border: #334155;
+    --input: #1e293b;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break-before {
+    page-break-before: always;
+  }
+  
+  .print-break-after {
+    page-break-after: always;
+  }
+}
