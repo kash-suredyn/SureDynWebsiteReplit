@@ -1,0 +1,37 @@
+{
+  "name": "suredyn-react-components",
+  "version": "1.0.0",
+  "description": "Reusable React components for SureDyn Business Solutions website",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "microsoft-dynamics-365",
+    "business-website",
+    "suredyn"
+  ],
+  "author": "SureDyn Business Solutions",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "wouter": "^2.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-react": "^7.22.0",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.8.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.0",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
